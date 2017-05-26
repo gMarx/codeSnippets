@@ -1,0 +1,131 @@
+<!-- impacts.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Impacts</title>
+  <link href='https://www.tentree.com/media/css_secure/118fdb6fd7abb7885de634168dd4921c.css?1485996754' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <style>
+    .panels {
+      min-height:100vh;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .panel {
+      background:#3A61A6;
+      color:white;
+      text-align: center;
+      align-items:center;
+      /* Safari transitionend event.propertyName === flex */
+      /* Chrome + FF transitionend event.propertyName === flex-grow */
+      transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel1 {
+      background: #F26C57;
+    }
+    .panel2 {
+      background: #92C83E;
+    }
+    .panel3 {
+      background: #3A61A6;
+    }
+
+    /* flex items */
+    .panel > * {
+      margin: 0;
+      width: 100%;
+      transition:transform 0.5s;
+      border: 1px solid red;
+      flex: 1 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .panel > *:first-child {
+      transform: translateY(-100%);
+    }
+    .panel.open-active > *:first-child { transform: translateY(0);}
+    .panel > *:last-child {
+      transform: translateY(100%);
+    }
+    .panel.open-active > *:last-child { transform: translateY(0);}
+
+    .panel p {
+      text-transform: uppercase;
+      font-family: 'gotham,sans-serif';
+      text-shadow:0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+      font-size: 2em;
+    }
+    .panel p:nth-child(2) {
+      font-size: 3em;
+    }
+
+    .panel.open {
+      flex: 3;
+      font-size:12px;
+    }
+    .impact {
+      width: 60%;
+    }
+    .impact-title {
+      font-size: 5em;
+      font-weight: 100px;
+      color: white;
+    }
+
+  </style>
+
+
+  <div class="panels">
+    <div class="panel panel1">
+      <h1 class='impact-title'>Air</h1>
+      <!-- <p>Let's</p> -->
+      <img class='air impact' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/e/l/elements-air-large_1.jpg"> 
+      <p>Trees are the lungs of the planet, They filter pollutants out of the air, purifying it for animals and humans to breathe. A few simple rows of trees makes the difference between a calm, refreshing breeze and a harsh, dry, whipping windstorm.</p>
+    </div>
+    <div class="panel panel2">
+      <h1 class='impact-title'>Land</h1>
+      <img class='land impact' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/e/l/elements-land-large_1.jpg" > 
+      <p>Trees have a major affect on the land they are planted in. This includes improving soil quality, restoring wildlife habitats, and improving communities through forest gardens (which provide food, wood and a source of income).</p>
+    </div>
+    <div class="panel panel3">
+      <h1 class='impact-title'>Water</h1>
+      <img class='water impact' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/e/l/elements-water-large_1.jpg" > 
+      <p>Deforestation leads to erosion and the expansion of deserts. Rainy seasons can shorten, while pollution fills the air. Fighting Climate Change counteracts these and creates something powerful for the land, the animals, and the people.</p>
+    </div>
+  </div>
+
+  <script>
+    const panels = document.querySelectorAll('.panel');
+    
+    function toggleOpen() {
+      this.classList.toggle('open');
+    }
+
+    function toggleActive(e) {
+      if (e.propertyName.includes('flex')) {
+        this.classList.toggle('open-active');
+      };
+    }
+    panels.forEach((panel) => panel.addEventListener('click', toggleOpen));
+    panels.forEach((panel) => panel.addEventListener('transitionend', toggleActive));
+  </script>
+
+
+
+</body>
+</html>
