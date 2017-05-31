@@ -34,19 +34,19 @@
       </div>  
 
       <div class='impacts hidden'>
-        <div class='impact center-vertically hidden'>
+        <div class='impactType center-vertically hidden'>
           <img class='center-vertically left hidden' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/e/l/elements-air-large_1.jpg"> 
           <h1 class='air hidden'>Air</h1>
           <p class='description-primary hidden'>Trees are the lungs of the planet, They filter pollutants out of the air, purifying it for animals and humans to breathe. A few simple rows of trees makes the difference between a calm, refreshing breeze and a harsh, dry, whipping windstorm.</p>
         </div>
 
-        <div class='impact center-vertically hidden'>
+        <div class='impactType center-vertically hidden'>
           <img class='center-vertically left hidden' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/e/l/elements-land-large_1.jpg" > 
           <h1 class='land hidden' >Land</h1>
           <p class='description-primary hidden' >Trees have a major affect on the land they are planted in. This includes improving soil quality, restoring wildlife habitats, and improving communities through forest gardens (which provide food, wood and a source of income). </p>
         </div>
 
-        <div class='impact center-vertically hidden'>
+        <div class='impactType center-vertically hidden'>
           <img class='center-vertically left hidden' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/e/l/elements-water-large_1.jpg" > 
           <h1 class='water hidden' >Water</h1>
           <p class='description-primary hidden' >Deforestation leads to erosion and the expansion of deserts into tropical lands. Rainy seasons can shorten from 8 months to only 3, while pollution fills the air. Fighting Climate Change counteracts these with a fresh start, and creates something powerful for the land, the animals, and the people.</p>
@@ -55,7 +55,7 @@
 
       <div class='tree-type hidden'>
 
-        <div class='impact hidden'>
+        <div class='impactType hidden'>
           <img class='left hidden' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/t/r/tree-types-climate-large_1.jpg" > 
           <h1 class='air hidden' >Climate Change</h1>
           <p class='description hidden' >
@@ -71,7 +71,7 @@
           </p>
         </div>
 
-        <div class='impact hidden'>
+        <div class='impactType hidden'>
           <img class='left hidden' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/t/r/tree-types-airquality-large_1.jpg" > 
           <h1 class='air hidden' >Quality of Air</h1>
           <p class='description hidden' >
@@ -83,7 +83,7 @@
           </p>
         </div>  
 
-        <div class='impact hidden'>
+        <div class='impactType hidden'>
           <img class='left hidden' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/t/r/tree-types-storms-large_1.jpg" > 
           <h1 class='air hidden' >Storms</h1>
           <p class='description hidden' >
@@ -98,7 +98,7 @@
       </div>  
 
       <div class='tree-type hidden'>
-        <div class='impact hidden'>
+        <div class='impactType hidden'>
           <img class='left hidden' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/t/r/tree-types-housing-large_1.jpg" > 
           <h1 class='land hidden' >Housing</h1>
           <p class='description hidden' >
@@ -112,7 +112,7 @@
           </p>
         </div>  
 
-        <div class='impact hidden'>
+        <div class='impactType hidden'>
           <img class='left hidden' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/t/r/tree-types-wildlifeland-large_1.jpg" > 
           <h1 class='land hidden' >Wildlife</h1>
           <p class='description hidden' >
@@ -124,7 +124,7 @@
           </p>
         </div>  
 
-        <div class='impact hidden'>
+        <div class='impactType hidden'>
           <img class='left hidden' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/t/r/tree-types-food-large_1.jpg" > 
           <h1 class='land hidden' >Food</h1>
           <p class='description hidden' >
@@ -138,7 +138,7 @@
       </div>  
 
       <div class='tree-type hidden'>
-        <div class='impact hidden'>
+        <div class='impactType hidden'>
           <img class='left hidden' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/t/r/tree-types-landpreservation-large_1.jpg" > 
           <h1 class='water hidden' >Land Preservation</h1>
           <p class='description hidden' >
@@ -154,7 +154,7 @@
           </p>
         </div>  
 
-        <div class='impact hidden'>
+        <div class='impactType hidden'>
           <img class='left hidden' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/t/r/tree-types-wildlifefish-large_1.jpg" > 
           <h1 class='water hidden' >Wildlife Fish</h1>
           <p class='description hidden' >
@@ -166,7 +166,7 @@
           </p>
         </div>  
 
-        <div class='impact hidden'>
+        <div class='impactType hidden'>
           <img class='left hidden' src="http://tentree.sandbox.nort.ca/media/discovery/article/banner_image/t/r/tree-types-rain-large_1.jpg" > 
           <h1 class='water hidden' >Rain</h1>
           <p class='description hidden' >
@@ -190,13 +190,12 @@
         text-transform: lowercase;
         font-size: 30px;
         box-shadow: none;
-        /*transition: all 1s linear;*/
         padding-top: 15px;
         padding-bottom: 15px;
       }
       .primary-article-text {
         display: block;
-        background: #FAFAFA;
+        /*background: #FAFAFA;*/
         font-family:  gotham, archer, sans-serif;
         line-height: 1.5;
       }
@@ -214,28 +213,25 @@
         font-size: 2em;
         padding-bottom: 10px;
       }
-      .impact {
+      .impactType {
         clear: both;
         padding-bottom: 20px;
       }
-      .impact > img.visible {
-          max-width: 150px;
+      .impactType > img.visible {
+          max-width: 100px;
           width: 25%;
-          padding-top: 8px; /* this may need tweaking */
-          padding-left: 10px;
-          padding-right: 10px;
+          padding-top: 8px;
+          padding-left: 0px;
+          padding-right: 18px;
         }
       .impacts {
-        /*transition: all 2s linear;*/
         display: block;
       }
       .tree-type {
-        /*transition: all 0.5s linear;*/
         opacity: 0;
         display: block;
       }
       .tree-type * * {
-        /*transition: all 0.5s linear;*/
         display: block;
       }
       .left {
@@ -265,7 +261,7 @@
       }
       .visible {
         opacity: 1;
-        height: auto; /* or inherit */
+        height: auto;
       }
       p.description, h1 {
         -webkit-margin-after: 0px;
