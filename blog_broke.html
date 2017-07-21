@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <script src="https://cdn.optimizely.com/js/6092751365.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQUOUF5VChACXFVQAwUFUQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+  <title>Ten Reasons Why I Plant Trees  | tentree</title>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+  <meta name="description" content="Shop men's &amp; women's clothing and plant 10 trees while you're at it. Hoodies, t shirts, tank tops, and long sleeve sweaters. ten trees are planted for every item purchased." />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" href="http://www.tentree.com/media/favicon/default/favicon_1.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://www.tentree.com/media/favicon/default/favicon_1.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="http://www.tentree.com/skin/frontend/default/dresscode/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="http://www.tentree.com/skin/frontend/default/dresscode/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="http://www.tentree.com/skin/frontend/default/dresscode/images/apple-touch-icon-114x114.png">
+  <link rel="stylesheet" type="text/css" href="http://www.tentree.com/media/css/7176b9f3cbdee08dfe08c94c1357993e.css?1496882473" media="all" />
+  <script type="text/javascript" src="http://www.tentree.com/js/northern/gtm.js?1496882473"></script>
+  <script type="text/javascript" src="http://www.tentree.com/js/prototype/prototype.js?1496882473"></script>
+  <script type="text/javascript" src="http://www.tentree.com/js/fishpig/wordpress/search.js?1496882473"></script>
+  <script type="text/javascript" src="http://www.tentree.com/js/fishpig/wordpress/comments.js?1496882473"></script>
+  <script type="text/javascript" src="http://www.tentree.com/skin/frontend/default/dresscode/js/dist/framework.min.js?1496882473"></script>
+  <script type="text/javascript" src="http://www.tentree.com/skin/frontend/default/dresscode/js/dist/magento.min.js?1496882473"></script>
+  <script type="text/javascript" src="http://www.tentree.com/skin/frontend/default/dresscode/js/dist/site.min.js?1496882473"></script>
+  <link rel="alternate" type="application/rss+xml" title="tentree &raquo; Ten Reasons Why I Plant Trees Comments Feed" href="http://www.tentree.com/blog/ten-reasons-why-i-plant-trees/feed/" />
+  <link rel="pingback" href="http://www.tentree.com/wp/xmlrpc.php" />
+  <link rel="canonical" href="http://www.tentree.com/blog/ten-reasons-why-i-plant-trees/" />
+  <link rel="alternate" type="application/rss+xml" title="tentree &raquo; Feed" href="http://www.tentree.com/blog/feed/" />
+  <link rel="alternate" type="application/rss+xml" title="tentree &raquo; Comments Feed" href="http://www.tentree.com/blog/comments/feed/" />
+
+  <script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.www.tentree.com';
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = ["AF"];
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+enUS = {"m":{"wide":["January","February","March","April","May","June","July","August","September","October","November","December"],"abbr":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]}}; // en_US locale reference
+Calendar._DN = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]; // full day names
+Calendar._SDN = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]; // short day names
+Calendar._FD = 0; // First day of the week. "0" means display Sunday first, "1" means display Monday first, etc.
+Calendar._MN = ["January","February","March","April","May","June","July","August","September","October","November","December"]; // full month names
+Calendar._SMN = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]; // short month names
+Calendar._am = "AM"; // am/pm
+Calendar._pm = "PM";
+
+// tooltips
+Calendar._TT = {};
+Calendar._TT["INFO"] = "About the calendar";
+
+Calendar._TT["ABOUT"] =
+"DHTML Date/Time Selector\n" +
+"(c) dynarch.com 2002-2005 / Author: Mihai Bazon\n" +
+"For latest version visit: http://www.dynarch.com/projects/calendar/\n" +
+"Distributed under GNU LGPL. See http://gnu.org/licenses/lgpl.html for details." +
+"\n\n" +
+"Date selection:\n" +
+"- Use the \xab, \xbb buttons to select year\n" +
+"- Use the " + String.fromCharCode(0x2039) + ", " + String.fromCharCode(0x203a) + " buttons to select month\n" +
+"- Hold mouse button on any of the above buttons for faster selection.";
+Calendar._TT["ABOUT_TIME"] = "\n\n" +
+"Time selection:\n" +
+"- Click on any of the time parts to increase it\n" +
+"- or Shift-click to decrease it\n" +
+"- or click and drag for faster selection.";
+
+Calendar._TT["PREV_YEAR"] = "Prev. year (hold for menu)";
+Calendar._TT["PREV_MONTH"] = "Prev. month (hold for menu)";
+Calendar._TT["GO_TODAY"] = "Go Today";
+Calendar._TT["NEXT_MONTH"] = "Next month (hold for menu)";
+Calendar._TT["NEXT_YEAR"] = "Next year (hold for menu)";
+Calendar._TT["SEL_DATE"] = "Select date";
+Calendar._TT["DRAG_TO_MOVE"] = "Drag to move";
+Calendar._TT["PART_TODAY"] = ' (' + "today" + ')';
+
+// the following is to inform that "%s" is to be the first day of week
+Calendar._TT["DAY_FIRST"] = "Display %s first";
+
+// This may be locale-dependent. It specifies the week-end days, as an array
+// of comma-separated numbers. The numbers are from 0 to 6: 0 means Sunday, 1
+// means Monday, etc.
+Calendar._TT["WEEKEND"] = "0,6";
+
+Calendar._TT["CLOSE"] = "Close";
+Calendar._TT["TODAY"] = "today";
+Calendar._TT["TIME_PART"] = "(Shift-)Click or drag to change value";
+
+// date formats
+Calendar._TT["DEF_DATE_FORMAT"] = "%b %e, %Y";
+Calendar._TT["TT_DATE_FORMAT"] = "%B %e, %Y";
+
+Calendar._TT["WK"] = "Week";
+Calendar._TT["TIME"] = "Time:";
+//]]>
+</script>
+<script type="text/javascript">//<![CDATA[
+var Translator = new Translate([]);
+//]]></script><meta name="google-site-verification" content="77CDnNJi17YKtJVnFrsShvKkx_MhPx7QCDcGnyvbmU0" />
+<meta property="twitter:account_id" content="1593207830" />
+<meta name="p:domain_verify" content="ae9cebaf9bd1d74d536c0b6db3ce550a"/>
+<meta name="google-site-verification" content="Ln0Xg5_XhY68l69LD_6CVNCwkr_VI-0Bu76VF-gQCzU" />
+
+<meta name="google-site-verification" content="Ln0Xg5_XhY68l69LD_6CVNCwkr_VI-0Bu76VF-gQCzU" />
+<script type="text/javascript">
+window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+heap.load("3441362187");
+</script>
+
+<!-- Start of tentreehelp Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","tentreehelp.zendesk.com");
+/*]]>*/</script>
+<!-- End of tentreehelp Zendesk Widget script --><script type="text/javascript">
+!function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version="3.0";var t=document.createElement("script");t.async=!0,t.src=e;var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+
+pintrk('load','2620597905119');
+pintrk('page');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none;" alt=""
+  src="https://ct.pinterest.com/v3/?tid=2620597905119&noscript=1" />
+</noscript></head>
+<body class="spacer  wordpress-post-view is-blog wordpress-post-5121">
+  <script>dataLayer = northern_gtm_check([{"visitorLoginState":"Logged out","user_type":"NOT LOGGED IN","visitorLifetimeValue":0,"visitorExistingCustomer":"No","local_currency":"USD"}]); </script>
+
+  <script src="http://www.tentree.com/skin/frontend/default/dresscode/js/gtm.events.js"></script>
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M5R9P7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>var item; (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M5R9P7');</script>
+  <!--<![endif]-->
+  <div class="loading-overlay">
+    <div></div>
+  </div><!-- BEGIN Inchoo Facebook Connect -->
+  <div id="fb-root"></div>
+  <script type="text/javascript">
+//<![CDATA[
+window.fbAsyncInit = function() {
+  FB.init({
+    appId   : "350171171788479",
+    channelUrl  : 'http://www.tentree.com/facebook/channel/index/locale/en_US/',
+    status    : true,
+    cookie    : true,
+    oauth   : true,
+    xfbml   : true
+  });
+  document.fire("facebook:fbAsyncInit");
+};
+
+(function(d){
+  var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+  js = d.createElement('script'); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js";
+  d.getElementsByTagName('head')[0].appendChild(js);
+}(document));
+
+document.observe('click', function(e){
+  var target = e.findElement('a[rel^=facebook-connect]') || e.findElement('button[rel^=facebook-connect]');
+  if (target && target.readAttribute('rel')=='facebook-connect') {
+    e.stop();
+    try{
+      FB.login(function(response){
+        if(response.status=='connected') setLocation('https://www.tentree.com/facebook/customer_account/connect/?token=' + response.authResponse.accessToken);
+      }, {scope: "email,user_birthday"});
+    }catch(error){}
+  }
+});
+//]]>
+</script>
+<!-- END Inchoo Facebook Connect -->
+<div class="wrapper">
+  <div class="container">
+    <noscript>
+      <div class="global-site-notice noscript">
+        <div class="notice-inner">
+          <p>
+            <strong>JavaScript seems to be disabled in your browser.</strong><br />
+            You must have JavaScript enabled in your browser to utilize the functionality of this website.                </p>
+          </div>
+        </div>
+      </noscript>
+    </div>
+    <div class="page">
+
+      <div id="cartInfo"></div>
+
+      <div id="header">
+        <div id="top_link_fixed" class="top_link_fixed">
+          <div class="nav-blocker">&nbsp;</div>
+          <div class="container">
+            <div class="sixteen columns header-treecount-wrapper">
+              <div class="nav-menu js-nav-menu-trigger"><span>menu</span></div>
+              <div id="top_link" class="logo-container">
+                <span class="hide">tentree - Shop men's &amp; women's clothing and plant 10 trees while you're at it. Hoodies, t shirts, tank tops, and long sleeve sweaters. ten trees are planted for every item purchased.</span>
+                <div class="logo-wrapper">
+                  <a href="http://www.tentree.com/" title="TENTREE" class="logo">
+                    <img src="http://www.tentree.com/skin/frontend/default/dresscode/images/banner2.png" alt="TENTREE" title="TENTREE">
+                  </a>
+                </div>
+                <div class="logo-right">
+                  <div class="select_wrapper top-logo-text" id="select_top">
+                    <a href="http://www.tentree.com/treecode/map/">
+                      <!--{TREECODE_LOCATIONS_17d42981fcbc1c09d494df5881a6a576}-->13,329,780<!--/{TREECODE_LOCATIONS_17d42981fcbc1c09d494df5881a6a576}-->               <span class="after">trees planted</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <!--{CART_SIDEBAR_ccac99d5b94ea76a80426deb9e2525c5}--><div id="topShoppingCart" class="shopping_cart js-mini-cart empty">
+
+              <div class="shopping_cart_b">
+                <a class="js-mini-cart-trigger" href="http://www.tentree.com/checkout/cart/">
+                  <span class="bag-img"></span><span class="bag-count "> (0)</span>
+                </a>
+              </div>
+
+              <div id="shopping_cart_mini" class="js-mini-cart-content">
+                <div class="inner-wrapper">
+                  <div class="side-cart-top">
+                    <div class="cart-header-container">
+                      <div class="cart-close close-nav js-close-nav"></div>
+                      <script>
+                      jQuery(".cart-close").click(function(){
+                        jQuery("#shopping_cart_mini").hide();
+                      });
+                      </script>
+                      <div class="cart-header-text-wrapper my-bag">
+                        <span>my bag</span>
+                      </div>
+                      <div class="cart-header-text-wrapper item-count">
+                        <span>0 item(s)</span>
+                      </div>
+                    </div>
+                    <div class="cart-subheader-container">
+                      <span class="bold">free shipping</span> <span>on orders over $75!</span>        </div>
+                      <div style="clear: both"></div>
+                    </div>
+
+                    <p class="empty">You have no items in your shopping cart.</p>
+                  </div>
+                </div>
+              </div>
+              <script>
+              jQuery(function ($) {
+                $(window).on('resize', function () {
+                  waitForFinalEvent(function () {
+                    var cart             = $('.cart'),
+                    formHeight       = cart.find('.left-wrap > form').height(),
+                    totalsHeight     = cart.find('.cart-collaterals').height(),
+                    cartHeight       = formHeight > totalsHeight ? formHeight : totalsHeight,
+                    mobileCartHeight = formHeight + totalsHeight;
+
+                    cart.css('height', $(this).innerWidth() ? (cartHeight + 139) : (mobileCartHeight + 175) + 'px');
+                  });
+                }, 200, 'cartResize');
+              });
+              </script>
+              <!--/{CART_SIDEBAR_ccac99d5b94ea76a80426deb9e2525c5}-->       <div class="treecount-container">
+              <div class="select_wrapper top-logo-text" id="select_top">
+                <a href="http://www.tentree.com/treecode/map/">
+                  <!--{TREECODE_LOCATIONS_17d42981fcbc1c09d494df5881a6a576}-->13,329,780<!--/{TREECODE_LOCATIONS_17d42981fcbc1c09d494df5881a6a576}-->             <span class="after">trees planted</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="nav-container js-nav-menu">
+            <div class="nav-wrapper">
+              <div class="sixteen columns">
+                <div class="menu_block_dropdown">
+                  <!--{TOPMENU_6923739961e814b416be6c90e2c8b617}--><nav id="main_menu_outer">
+                  <ul id="nav">
+                    <li  class="level0 nav-1 first level-top parent"><a href="http://www.tentree.com/womens.html"  class="level-top" ><span>womens</span></a><div class="children"><ul class="level0"><li  class="level1 nav-1-1 first"><a href="http://www.tentree.com/womens.html?cat=55" ><span>Hoodies</span></a></li><li  class="level1 nav-1-2"><a href="http://www.tentree.com/womens.html?cat=56" ><span>Longsleeve</span></a></li><li  class="level1 nav-1-3"><a href="http://www.tentree.com/womens.html?cat=57" ><span>T-Shirts</span></a></li><li  class="level1 nav-1-4"><a href="http://www.tentree.com/womens.html?cat=58" ><span>Tanks</span></a></li><li  class="level1 nav-1-5"><a href="http://www.tentree.com/womens.html?cat=60" ><span>Pants</span></a></li><li  class="level1 nav-1-6"><a href="http://www.tentree.com/womens.html?cat=76" ><span>Dresses</span></a></li><li  class="level1 nav-1-7 last"><a href="http://www.tentree.com/womens.html?cat=77" ><span>Shorts</span></a></li></ul></div></li><li  class="level0 nav-2 level-top parent"><a href="http://www.tentree.com/mens.html"  class="level-top" ><span>mens</span></a><div class="children"><ul class="level0"><li  class="level1 nav-2-1 first"><a href="http://www.tentree.com/mens.html?cat=51" ><span>Hoodies</span></a></li><li  class="level1 nav-2-2"><a href="http://www.tentree.com/mens.html?cat=52" ><span>Longsleeve</span></a></li><li  class="level1 nav-2-3"><a href="http://www.tentree.com/mens.html?cat=53" ><span>T-Shirts</span></a></li><li  class="level1 nav-2-4"><a href="http://www.tentree.com/mens.html?cat=54" ><span>Tanks</span></a></li><li  class="level1 nav-2-5"><a href="http://www.tentree.com/mens.html?cat=66" ><span>Pants</span></a></li><li  class="level1 nav-2-6 last"><a href="http://www.tentree.com/mens.html?cat=71" ><span>Shorts</span></a></li></ul></div></li><li  class="level0 nav-3 last level-top parent"><a href="http://www.tentree.com/accessories.html"  class="level-top" ><span>accessories</span></a><div class="children"><ul class="level0"><li  class="level1 nav-3-1 first"><a href="http://www.tentree.com/accessories.html?cat=50" ><span>Hats</span></a></li><li  class="level1 nav-3-2 last"><a href="http://www.tentree.com/accessories.html?cat=67" ><span>Bags</span></a></li></ul></div></li>      <li><a href="http://www.tentree.com/treecode/map/"><span>treemap</span></a></li>
+                    <li><a href="http://www.tentree.com/company"><span>company</span></a></li>
+                    <li><a href="http://www.tentree.com/store-locator"><span>stores</span></a></li>
+                    <li><a href="http://www.tentree.com/blog"><span>blog</span></a></li>
+                  </ul>
+                  <div class="close-nav js-close-nav">&#xf12a;</div>
+                </nav>
+                <!--/{TOPMENU_6923739961e814b416be6c90e2c8b617}-->              <div class="border-bottom"></div>
+                <ul class="sub-nav">
+                  <li class="register-code">
+                    <a href="http://www.tentree.com/treecode/"><span>register code</span></a>
+                  </li>
+                  <li class="my-account">
+                    <a data-dialog="{dialogClass:'ui-dialog-notitle'}" class="dialog clearfix" href="https://www.tentree.com/customer/account/">
+                      <span class="txt">my account</span>
+                      <span class="icon"></span>
+                    </a>
+                  </li>
+                  <li class="log-in">
+                    <a title="Log In / Create" href="https://www.tentree.com/customer/account/login/" data-dialog="{dialogClass:'ui-dialog-notitle'}" class="dialog login-dialog">
+                      <span>Log In / Create</span>
+                    </a>
+                  </li>
+                  <li class="my-trees">
+                    <a href="http://www.tentree.com/treecode/map/mytrees/">
+                      <span>my trees</span>
+                    </a>
+                  </li>
+                  <li class="store-swapper">
+                    <div class="store-switcher-wrap">
+                      <div class="store-switcher">
+                        <a class="selected" onclick="setCookie('base')" href="http://www.tentree.com/blog/ten-reasons-why-i-plant-trees/?___store=default&amp;___from_store=default">
+                          <img src="http://www.tentree.com/skin/frontend/default/dresscode/images/flag_default.png" alt="English" />
+                          <span class="code">USA</span>
+                        </a>
+                        <a  onclick="setCookie('canada')" href="http://www.tentree.com/ca/blog/ten-reasons-why-i-plant-trees/?___store=en_ca&amp;___from_store=default">
+                          <img src="http://www.tentree.com/skin/frontend/default/dresscode/images/flag_en_ca.png" alt="English" />
+                          <span class="code">CAN</span>
+                        </a>
+                      </div>
+                      <span class="icon"></span>
+                    </div>
+                    <script>
+                    function setCookie(code) {
+                      Mage.Cookies.set('WEBSITE_CODE', code, null, '/');
+                    }
+
+                    jQuery(function($) {
+                      $('.mobile-store-switch .store-switcher a:first-of-type').click(function(e) {
+                        e.preventDefault();
+                        e.stopImmediatePropagation();
+                        $(e.target).parent('.store-switcher').toggleClass('active');
+                      });
+                    });
+                    </script>
+
+                  </li>
+                  <li class="currencies">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="blog-menu-container" id="blog-menu-container">
+      <div class="wrap-blog-menu" id="wrap-blog-menu">
+        <div class="wp-blog-menu-wrapper">
+          <span class="categories" data-toggle="categories">Categories</span>
+          <ul class="wp-blog-menu" id="wp-blog-menu" data-panel="categories">
+            <li  class="level0 nav-1 first"><a href="http://www.tentree.com/blog" ><span>home</span></a></li><li  class="level0 nav-2"><a href="http://www.tentree.com/blog/category/treetravels/" ><span>travel</span></a></li><li  class="level0 nav-3"><a href="http://www.tentree.com/blog/category/the-number-ten/" ><span>top 10's</span></a></li><li  class="level0 nav-4 last"><a href="http://www.tentree.com/blog/category/environment/" ><span>environment</span></a></li>     </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    jQuery(function ($) {
+      $('.nav-container .nav-wrapper').scrollbarPaper();
+    });
+    </script>
+    <div class="main-container">
+      <div class="col2-left-layout">
+        <div class="main sixteen columns">
+          <div class="container">
+            <div class="col-main f-right category-right">
+              <!--{GLOBAL_MESSAGES_56e63b3859ce8aeb8f16463bcd292252}--><!--/{GLOBAL_MESSAGES_56e63b3859ce8aeb8f16463bcd292252}-->             
+              <div class="post-container">
+                <p class="post-meta details">
+                </p>
+                <div class="page-title post-title">
+                  <h1>Ten Reasons Why I Plant Trees</h1>
+                </div>
+                <div class="post-view">
+                  <p class="post-date when">May 18, 2016<span class="by-author"> by Jonathan Clark</span></p>
+                  <div class="post-entry entry std post-entry-with-image">
+                    <div class="featured-image left">
+                      <img src="http://www.tentree.com/wp/wp-content/uploads/2015/12/Shayna-Planting-21-.jpg" title="Ten Reasons Why I Plant Trees" alt="Ten Reasons Why I Plant Trees" />
+                    </div>
+                    
+
+                    <p>Different people have different reasons for taking a job as a tree planter. It’s common knowledge that most companies will not hire people who are solely interested in planting for the environmental aspects of the job. But that doesn’t mean that wanting to help the environment can’t be part of why you do it.<!--more--></p>
+                    <p> Some people will criticize that planting trees as a career doesn’t actually help the environment. They say it’s bad in the long run because it enables large corporations to continue cutting timber to fill the needs &amp; desires of our modern society. However, it would be naïve to believe that without thinking about the bigger picture. The corporations will harvest wood whether or not the logged areas get replanted. Planting new trees is better than not doing anything at all.</p>
+                    <p> Here are the top ten reasons that a veteran planter might list when asked why they do what they do:</p>
+                    <div id="attachment_5250" class="wp-caption alignnone" ><a href="http://www.tentree.com/wp/wp-content/uploads/2015/12/Girls-laughing-treeplanting-copy.jpg"><img class="size-full wp-image-5250" src="http://www.tentree.com/wp/wp-content/uploads/2015/12/Girls-laughing-treeplanting-copy.jpg" alt="By: Shannie Levesque" /></a> By: Shannie Levesque</div>
+                      <p> <strong>1) Friendships:</strong> The people you meet in a planting camp are unique. You’ll never find a more diverse and interesting group of people. Many of the friendships that you make in planting camps will last for a lifetime.</p>
+                      <p> <strong>2) Physical Health:</strong> Planting can be quite a workout. Why pay for a gym membership when you can work out for eight to ten hours every day and get paid to do it?</p>
+                      <p> <strong>3) Fresh Air:</strong> Getting away from the pollution of a city is great for your body.</p>
+                      <div id="attachment_5262" class="wp-caption alignnone" ><img class="size-full wp-image-5262" src="http://www.tentree.com/wp/wp-content/uploads/2015/12/DSC3028.jpg" alt="By: Replant.ca"/> By: Replant.ca</div>
+                        <p> <strong>4) Amazing Meals:</strong> This is especially important for people who aren’t good at cooking for themselves, or who want a change. In many camps, you’ll be taken care of by amazing cooks who feed you a really healthy and nutritious diet.</p>
+                        <p> <strong>5) Environmental Reasons:</strong> As mentioned above, planting is better than not planting.</p>
+                        <p> <strong>6) Scenery:</strong> Some people think that “travel” means seeing a foreign country. There’s some beautiful scenery in Canada that most city-dwellers never get to see.</p>
+                        <div id="attachment_5148" class="wp-caption alignnone"><a href="http://www.tentree.com/wp/wp-content/uploads/2015/12/TGM_7039.jpg"><img class="size-full wp-image-5148" src="http://www.tentree.com/wp/wp-content/uploads/2015/12/TGM_7039.jpg" alt="By Tom Miller"/></a> By Tom Miller</div>
+                          <p> <strong>7) Mental Focus:</strong> A few months of planting really lets you get away from the negative aspects of civilization, and lets you focus on the things that mean something in your life.</p>
+                          <p> <strong>8) The Challenge:</strong> Pushing yourself to be successful every day requires a level of motivation that will stick with you long after you’ve planted your last tree.</p>
+                          <p> <strong>9) Paycheques:</strong> Let’s not lie, it’s nice to be paid well for working so hard.</p>
+                          <p> <strong>10) Satisfaction:</strong> There is almost nothing that you can do in your life that’s more rewarding than getting through a season of planting, looking back, and thinking, “I did something that very few people on this planet are capable of accomplishing.”</p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="newsletter-footer clearfix">
+              <div class="title">newsletter signup</div>
+              <div class="subtitle">Want exclusive offers and first access to products? Join our email newsletter.</div>
+              <form action="https://www.tentree.com/newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
+                <div class="block-content clearfix">
+                  <div class="newsletter-wrapper">
+                    <input type="email" name="email" id="newsletter" title="Enter your email address" placeholder="Enter your email address" class="input-text required-entry validate-email">
+                    <button type="submit" title="Subscribe">subscribe</button>
+                  </div>
+                </div>
+              </form>
+              <script type="text/javascript">
+  //<![CDATA[
+  var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+  //]]>
+  </script>
+</div>
+<div id="footer">
+  <div class="container">
+    <div class="row quicklinks">
+      <ul class="clearfix">
+        <li>
+          <a href="http://www.tentree.com/customer-care#shipping">
+            <div class="title">shipping info</div>
+          </a>
+          <div class="subtitle">free shipping on orders over $75</div>
+        </li>
+        <li>
+          <a href="http://www.tentree.com/customer-care#returns">
+            <div class="title">returns &amp; exchanges</div>
+          </a>
+          <div class="subtitle">if you are not 100% satisfied...</div>
+        </li>
+        <li>
+          <a href="http://www.tentree.com/contacts">
+            <div class="title">contact us</div>
+          </a>
+          <div class="subtitle">we're here to help</div>
+        </li>
+        <li>
+          <a href="http://www.tentree.com/sales/order/history">
+            <div class="title">order history</div>
+          </a>
+          <div class="subtitle">your previous orders</div>
+        </li>
+        <li class="clearfix">
+          <a href="http://www.tentree.com/gift-card.html">
+            <div class="title">gift cards</div>
+          </a>
+          <div class="subtitle">something special</div>
+        </li>
+        <li class="clearfix mobile-only">
+          <a href="http://www.tentree.com/tree-registration">
+            <div class="title">faq's</div>
+          </a>
+        </li>
+        <li class="clearfix mobile-only">
+          <a href="http://www.tentree.com/company">
+            <div class="title">about us</div>
+          </a>
+        </li>
+        <li class="clearfix mobile-only">
+          <a href="http://www.tentree.com/privacy-policy">
+            <div class="title">privacy policy</div>
+          </a>
+        </li>
+        <li class="clearfix mobile-only">
+          <a href="http://tentree.com/blog">
+            <div class="title">blog</div>
+          </a>
+        </li>
+        <li class="clearfix mobile-only">
+          <a href="http://www.tentree.com/careers">
+            <div class="title">careers</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="row main-footer">
+      <div class="footer-toggle"></div>
+      <div class="main-footer-container clearfix">
+        <div class="two columns">
+          <div class="column-wrapper">
+            <h3 class="blue">shop now</h3>
+            <ul>
+              <li><a href="http://www.tentree.com/womens.html">women's</a><div></li>
+              <li><a href="http://www.tentree.com/mens.html">men's</a></li>
+              <li><a href="http://www.tentree.com/accessories.html">accessories</a></li>
+              <li><a href="http://www.tentree.com/collection.html">collection</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="two columns">
+          <div class="column-wrapper">
+            <h3>information</h3>
+            <ul>
+              <li><a href="http://www.tentree.com/company">about</a></li>
+              <li><a href="http://www.tentree.com/privacy-policy">privacy policy</a></li>
+              <li><a href="http://tentree.com/blog" target="_blank">blog</a></li>
+              <li><a href="http://www.tentree.com/careers">careers</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="two columns">
+          <div class="column-wrapper">
+            <h3>customer care</h3>
+            <ul>
+              <li><a href="http://www.tentree.com/contacts">contact us</a></li>
+              <li><a href="http://www.tentree.com/customer-care#returns">returns/exchanges</a></li>
+              <li><a href="http://www.tentree.com/customer-care#shipping">shipping</a></li>
+              <li><a href="http://www.tentree.com/company">company</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="two columns">
+          <div class="column-wrapper">
+            <h3>my account</h3>
+            <ul>
+              <li><a href="http://www.tentree.com/customer/account">preferences</a></li>
+              <li><a href="http://www.tentree.com/sales/order/history">order history</a></li>
+              <li><a href="http://www.tentree.com/treecode/map/mytrees">my trees</a></li>
+              <li><a href="http://www.tentree.com/treecode">register code(s)</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="two columns">
+          <div class="column-wrapper">
+            <h3>tree program</h3>
+            <ul>
+              <li><a href="http://www.tentree.com/treecode">register code(s)</a></li>
+              <li><a href="http://www.tentree.com/tree-registration">frequently asked</a></li>
+              <li><a href="http://www.tentree.com/treecode/map">treemap</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row bottom-footer">
+      <div class="column payment-methods">
+        <img src="http://www.tentree.com/skin/frontend/default/dresscode/images/payment-methods.png" title="Payment Methods">
+      </div>
+      <div class="column copyright">
+        <p>
+          &copy; <script type="text/javascript"> var d = new Date(); document.write(d.getFullYear()) </script> tentree. all rights reserved.
+          <br>
+          development by <a href="http://www.northern.co" target="_blank" title="eCommerce Magento Web Developer" class="developer-link">Northern Commerce</a>
+        </p>
+      </div>
+      <div class="column social-footer">
+        <ul>
+          <li><a target="_blank" href="https://www.facebook.com/tentree"><span class="icon-facebook"></span></a></li>
+          <li><a target="_blank" href="http://instagram.com/tentree"><span class="icon-instagramm"></span></a></li>
+          <li><a target="_blank" href="https://twitter.com/tentree"><span class="icon-twitter"></span></a></li>
+          <li><a target="_blank" href="http://www.youtube.com/user/TenTreeApparel"><span class="icon-youtube"></span></a></li>
+          <li><a target="_blank" href="http://www.pinterest.com/tentree/"><span class="icon-pinterest"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+var isMobile = {
+  Android   : function () {
+    return navigator.userAgent.match(/Android/i) ? true : false;
+  },
+  BlackBerry: function () {
+    return navigator.userAgent.match(/BlackBerry/i) ? true : false;
+  },
+  iOS       : function () {
+    return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;
+  },
+  Windows   : function () {
+    return navigator.userAgent.match(/IEMobile/i) ? true : false;
+  },
+  any       : function () {
+    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
+  }
+};
+
+jQuery(document).ready(function () {
+  if (!isMobile.any()) {
+  }
+});
+
+jQuery(window).resize(function () {
+  jQuery('#tip').css({'display': 'none'});
+});
+</script>
+<a href="#" id="livilyChatLink" class="livilyChatButton ClickdeskChatLink" onclick="return false;"></a>
+<!--{THEME_LOGIN_POPUP_f6b4fc2cc61e3b27d1a6665e0e80bb87}--><!--/{THEME_LOGIN_POPUP_f6b4fc2cc61e3b27d1a6665e0e80bb87}--><!--{BRONTO_CART_RECOVERY_ae20cd2ff8a11d4a66d6d255524cf651}-->
+<script data-name="__br_tm" type="text/javascript">
+var _bsw = _bsw || [];
+_bsw.push(['_bswId', '04333c947a3ce401330dc3aa24d073d186219dde66c7b8d03ff9f0da106911df']);
+(function() {
+  var bsw = document.createElement('script'); bsw.type = 'text/javascript'; bsw.async = true;
+  bsw.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'js.bronto.com/c/6gvy9kdqgc6kuk3giocm4u8bi4kidekgn6enz87kvzk2r3qxqi/04333c947a3ce401330dc3aa24d073d186219dde66c7b8d03ff9f0da106911df/s/b.min.js';
+  var t = document.getElementsByTagName('script')[0]; t.parentNode.insertBefore(bsw, t);
+})();
+</script><!--/{BRONTO_CART_RECOVERY_ae20cd2ff8a11d4a66d6d255524cf651}-->
+
+<script type="text/javascript">
+if (document.addEventListener) {
+  document.addEventListener('bronto:popup-submitted', function(e) {
+    new Ajax.Request('http://www.tentree.com/btnewsletter/index/submit/', {
+      method: 'post',
+      parameters: { emailAddress: e.detail.email }
+    });
+  }, false);
+}
+</script>
+
+
+<script type="text/javascript" src="//p.bm23.com/bta.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+    var bta = new __bta('17685af1372e4068709ec354eacc5a63');
+    //]]>
+    </script>
+
+
+  </div>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=135840649851844";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"019fd1e8db","applicationID":"28424427","transactionName":"YAcEMUBVVxdQARYIWVlNJwZGXVYKHhUNE1JHEAMWQRtJC0IWTRdfUhU=","queueTime":0,"applicationTime":1133,"atts":"TEAHRwhPRBk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

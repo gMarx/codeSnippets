@@ -1,0 +1,35 @@
+<!-- for debugging greats.com's GA tracking issues -->
+<input class="checkout great-button gold" type="submit" name="checkout" value="Begin Checkout" onclick="ga(‘send’, ‘event’, ‘Begin Checkout’, ‘Click’, 'checkout');">
+<input class="checkout great-button gold" type="submit" name="checkout" value="console printing" onclick="console.log('hello');">
+
+
+<!-- line 56 in GB-min.js-->
+class="size" onClick="ga(‘send’, ‘event’, ’Size Selection’, ‘Click’, ’size’);"
+<!-- removed the onclick -->
+onclick="ga(‘send’, ‘event’, ’Size Selection’, ‘Click’, ’size’);"
+
+<script type="text/javascript">
+
+//get a reference to the elements
+var sizedropdowns = [...document.getElementsByClassName('toggle-button dropdown')];
+
+//add event listener
+sizedropdowns.forEach( function(dropdown){
+  dropdown.addEventListener('click', bindGAToSizes);
+  console.log('events bound');
+});
+
+var bindGAToSizes = function() {
+  console.log('clicked on dropdown');
+}
+  var sizeBtn = [...document.getElementsByClassName('size')];
+  var trackGASize = function() {
+    ga('send', 'event', 'Size Selection', 'Click', 'size');
+    console.log('clicked a size');
+  };
+  sizeBtn.forEach(function(size) {
+    size.addEventListener('click', trackGASize);
+  });
+};
+
+</script>
