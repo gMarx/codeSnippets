@@ -21,9 +21,9 @@ $(document).ready(function() {
      //print out True or False for element in view or not
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
   }
-  
 
-$(window).bind("scroll",function (event) {
+
+$(window).bind("scroll", function (event) {
      if (isScrolledIntoView(optlySelector)) {
       window.optimizely = window.optimizely || [];
       window.optimizely.push(["trackEvent", optlyEventName]);
