@@ -17,8 +17,8 @@ if ( ecobox.length == 1 && ecoboxInfo.length == 1 ) {
   var ecoboxDescriptionClasses = [];
 
   for (var i = 0; i < materialButtons.length; i++) {
-    if ( !!materialButtons[i].id && materialButtons[i].id != '' ) ecoboxIds.push( '#' + materialButtons[i].id );
-    if ( !!materialDescriptions[i].className && materialDescriptions[i].className != "info-item active main-item" ) ecoboxDescriptionClasses.push('.' + materialDescriptions[i].className.replace(' ','.') );
+    if ( !!materialButtons[i].id && materialButtons[i].id != '' ) ecoboxIds.push( `#${materialButtons[i].id}` );
+    if ( !!materialDescriptions[i].className && materialDescriptions[i].className != "info-item active main-item" ) ecoboxDescriptionClasses.push(`.${materialDescriptions[i].className.replace(' ','.')}` );
   }
 } else {
     console.log('Something wrong');
@@ -42,7 +42,7 @@ function changeActive() {
   // console.log( ecoboxDescriptionClasses[position] );
 }
 
-clearInterval( rotateActive )
+clearInterval( rotateActive );
 
 // sudo code
 // find buttons & store in a variable
